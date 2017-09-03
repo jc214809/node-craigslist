@@ -102,6 +102,11 @@ function _getPostingDetails (postingUrl, markup) {
 		details.images = details.images || [];
 		details.images.push(($(element).attr('href') || '').trim());
 	});
+	
+	$('.attrgroup .otherpostings').find('a').each((i, element) => {
+		details.dates = details.dates || [];
+		details.dates.push(($(element).text() || '').trim());
+	});
 
 	return details;
 }
